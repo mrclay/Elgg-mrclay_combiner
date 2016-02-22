@@ -15,8 +15,8 @@ class AmdViewFilter {
 	 * @return string The AMD name (e.g., 'elgg/module'), or blank for no AMD name.
 	 */
 	private function getAmdName($name) {
-		if (preg_match('~^(.*)\\.js$~', $name, $m)) {
-			return $m[1];
+		if (preg_match('~^(js/)?(.*)\\.js\\z~', $name, $m)) {
+			return $m[2];
 		}
 
 		$pieces = explode("/", $name); // [js, elgg, module.js]
