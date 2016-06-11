@@ -105,4 +105,6 @@ function filter_settings_save($h, $t, $v, $p) {
 
 	$params['modules'] = implode("\n", $modules);
 	set_input('params', $params);
+
+	elgg_flush_caches();
 }
