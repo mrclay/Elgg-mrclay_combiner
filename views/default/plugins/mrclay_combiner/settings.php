@@ -37,6 +37,27 @@ $modules_textarea = elgg_view('input/plaintext', [
 	<p>Suggestions: <?= implode(', ', $suggestions); ?></p>
 </div>
 
+<?php
+$site_lang = elgg_get_config('language');
+$inline_site_lang = elgg_get_plugin_setting('inline_lang', 'mrclay_combiner', '');
+if ($site_lang) {
+	?>
+<div>
+	<?= elgg_view('input/checkbox', [
+		'name' => 'params[inline_lang]',
+		'checked' => (bool)$inline_site_lang,
+		'label' => "Inline the " . elgg_view('output/url', [
+				'href' => elgg_get_simplecache_url("languages/$site_lang.js"),
+				'text' => 'site language module',
+				'target' => '_blank',
+			]),
+	]) ?>
+	<p class="elgg-text-help">If most users use a different language, this may not be wise.</p>
+</div>
+	<?php
+}
+?>
+
 <h3>Select which resources to link in head</h3>
 <?php
 
