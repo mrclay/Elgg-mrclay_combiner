@@ -3,7 +3,7 @@
 	<name>HTTP Request Combiner</name>
 	<id>mrclay_combiner</id>
 	<author>Steve Clay</author>
-	<version>1.0</version>
+	<version>1.1</version>
 	<category>performance</category>
 	<description>Combines JS/CSS assets</description>
 	<license>MIT</license>
