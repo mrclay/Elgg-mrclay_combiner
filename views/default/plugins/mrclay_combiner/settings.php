@@ -3,15 +3,19 @@
 namespace MrClay\CombinePlugin;
 
 $suggestions = [
+	'text',
 	'elgg/Plugin',
 	'elgg/init',
 	'elgg/ready',
 	'elgg/spinner',
-	'text',
+	'elgg/reportedcontent',
+	'core/river/filter',
+	'forms/comment/save',
+	'groups/navigation',
 ];
-if (elgg_is_active_plugin('reportedcontent')) {
-	$suggestions[] = 'elgg/reportedcontent';
-}
+$suggestions = array_filter($suggestions, function ($module) {
+	return elgg_view_exists("$module.js");
+});
 
 $suggestions = array_map(function ($module) {
 	return elgg_view('output/url', [
