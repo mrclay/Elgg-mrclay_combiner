@@ -1,0 +1,19 @@
+{
+  "name": "mrclay/elgg-http-combiner",
+  "type": "elgg-plugin",
+  "description": "Reduces HTTP requests by merging files and AMD modules",
+  "homepage": "http://www.mrclay.org/",
+  "keywords": [
+    "elgg", "plugin", "http", "webperf", "amd"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Steve Clay",
+      "email": "steve@mrclay.org"
+    }
+  ],
+  "require-dev": {
+    "composer/installers": "1.*"
+  }
+}
