@@ -94,6 +94,11 @@ function filter_settings_save($h, $t, $v, $p) {
 	$modules = $params['modules'];
 
 	$modules = preg_split('~\s+~', $modules, -1, PREG_SPLIT_NO_EMPTY);
+
+	$modules = array_map(function ($module) {
+		return preg_replace('~\.js$~', '', $module);
+	}, $modules);
+
 	$modules = array_unique($modules);
 
 	foreach ($modules as $i => $module) {
